@@ -18,4 +18,7 @@ class Pairing:
             self.playerWhite = playerTwo
             self.playerBlack = playerOne
             
-            #maybe random? 
+            #maybe random?
+        self.result = null
+        pairId = 0
+        

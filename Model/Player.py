@@ -2,7 +2,7 @@ class Player:
 
 
     def __init__(self, playerId, twitchName, lichessName, rating,
-                 prevousPlayerList, numGames=0, numWhites = 0):
+                 prevousPlayerList, numGames=0, numWhites = 0, rank):
          self.playerId = playerId
          self.twitchName = twitchName
          self.lichessName = lichessName
@@ -10,8 +10,4 @@ class Player:
          self.previousPlayerList = previousPlayerList
          self.numGames = numGames
          self.numWhites = numWhites
-         
-
-    
-        
-    
+         #self.rank (not sure yet)
