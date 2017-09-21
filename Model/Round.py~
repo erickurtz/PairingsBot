@@ -1,8 +1,0 @@
-# A round is a list of pairings
-
-
-class Round:
-    def __init__(self, pairingList):
-        self.pairingList = pairingList
-
-        
