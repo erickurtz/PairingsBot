@@ -11,3 +11,6 @@ class Player:
          self.numGames = numGames
          self.numWhites = numWhites
          #self.rank (not sure yet)
+
+
+    

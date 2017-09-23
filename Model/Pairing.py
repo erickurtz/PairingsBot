@@ -1,24 +1,32 @@
+import Player.py
+
 class Pairing:
 
-    def __init__(self, playerOne, playerTwo, result, pairId):
+
+    
+    def __init__(self, playerOne, playerTwo):
 
         p1WhiteRatio = float playerOne.numWhites/playerOne.numGames
         p2WhiteRatio = float playerTwo.numwhites/playerTwo.numGames
 
         if(p1WhiteRatio < p2WhiteRatio):
-            self.playerWhite = playerOne
-            self.playerBlack = playerTwo
+            makePairing(playerOne, playerTwo)
         elif(p1WhiteRatio > p2Whiteratio):
-            self.playerWhite = playerTwo
-            self.playerBlack = playerOne
+            makePairing(playerTwo, PlayerOne)
         elif(playerOne.rating < playerTwo.rating):
-            self.playerWhite = playerOne
-            self.playerBlack = playerTwo
+            makePairing(playerOne, playerTwo)
         else:
-            self.playerWhite = playerTwo
-            self.playerBlack = playerOne
-            
+            makePairing(playerTwo, PlayerOne)
+
             #maybe random?
         self.result = null
-        pairId = 0
+
+
+    def makePairing(pWhite, pBlack):
+         pWhite.numGames = playerOne.numGames + 1
+         pWhite.numWhites = playerOne.numWhites + 1
+         pBlack.numGames = playerTwo.numgames + 1
+         self.playerWhite = pWhite
+         self.playerBlack = pBlack
+        
         
