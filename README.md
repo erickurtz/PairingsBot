@@ -101,3 +101,14 @@ Rank: Name(previous 2 opponents)
 David(white) vs Aaron(Black)
 Evan(white) vs Bob(black)
 Frank(white) vs. charlie(black)
+
+Docker Commands
+-----------------------------------
+cd <<working-directory>>
+docker build -t pairings-bot .
+docker run pairings-bot
+
+for interactive
+docker run -t -i pairings-bot /bin/bash
+
+you can exit by typing exit
