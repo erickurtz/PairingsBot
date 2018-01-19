@@ -165,3 +165,9 @@ Session.vim
 tags
 
 **/activate
+
+# Mac Stuff
+**/.DS_Store
+
+# Local Database
+.data/

@@ -1,9 +1,9 @@
 From python:3
 
-ADD . /PairingsBot
+ADD . /code
 
-WORKDIR /PairingsBot
+WORKDIR /code
 
-RUN pip install -r requirements.txt
+RUN pip install -r ./Python/requirements.txt
 
-CMD ["python", "./BotApi/BotApi.py"]
+CMD ["python", "./Python/BotApi/BotApi.py"]
