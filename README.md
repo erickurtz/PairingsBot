@@ -104,11 +104,12 @@ Frank(white) vs. charlie(black)
 
 Docker Commands
 -----------------------------------
-cd <<working-directory>>
-docker build -t pairings-bot .
-docker run pairings-bot
 
-for interactive
-docker run -t -i pairings-bot /bin/bash
+Run the project in detached mode
+docker-compose run main -d
 
-you can exit by typing exit
+Run main with the container open in command line to look around
+docker-compose run main /bin/bash
+
+Open a python file and load it while in the container
+python -i file.py
