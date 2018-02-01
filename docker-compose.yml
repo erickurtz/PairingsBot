@@ -24,7 +24,7 @@ services:
       - 8080:8080
 
   main:
-    command: python ./Python/BotApi/BotApi.py
+    command: python ./Python/Presentation/Init.py
     build: .
     stdin_open: true
     tty: true
