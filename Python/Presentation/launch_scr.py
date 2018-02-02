@@ -24,8 +24,9 @@ def initialize(scr):
     menuItems = ["1. Create Tournament\n", "2. Load Tournament\n"]
     for item in menuItems:
         scr.addstr(item)
+
     line_hilighted = 0
-    changeMenuItem(scr, len(menuItems), line_hilighted)
+    changeMenuItem(scr, len(menuItems), line_hilighted )
     while True:
         direction = scr.getch()
         if direction  == curses.KEY_DOWN:

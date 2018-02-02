@@ -4,6 +4,7 @@
 
 import curses
 import launch_scr
+import traceback
 
 def initialize():
     scr = curses.initscr()
@@ -18,9 +19,6 @@ def initialize():
         #Set blocking or non-blocking read behavior for the window. If delay is negative, blocking read is used (which will wait indefinitely for input). If delay is zero, then non-blocking read is used, and -1 will be returned by getch() if no input is waiting. If delay is positive, then getch() will block for delay milliseconds, and return -1 if there is still no input at the end of that time.
         scr.timeout(-1)
 
-        #Leave echo mode. Echoing of input characters is turned off.
-        curses.noecho()
-
         # Turn off line buffering and interpret characters as they are ready.
         # This is for directional keys
         curses.cbreak()
@@ -28,9 +26,8 @@ def initialize():
         launch_scr.initialize(scr)
 
     except Exception as ex:
-        scr.addstr(str(ex))  
-        scr.getch()
-        print (ex)
+        curses.endwin()
+        traceback.print_exc()
     finally:
         scr.erase()
         curses.nocbreak()
