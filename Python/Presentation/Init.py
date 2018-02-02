@@ -19,7 +19,7 @@ def initialize():
         scr.timeout(-1)
 
         #Leave echo mode. Echoing of input characters is turned off.
-        #curses.noecho()
+        curses.noecho()
 
         # Turn off line buffering and interpret characters as they are ready.
         # This is for directional keys
@@ -28,7 +28,8 @@ def initialize():
         launch_scr.initialize(scr)
 
     except Exception as ex:
-        scr.addstr("\nAn error happened")  
+        scr.addstr(str(ex))  
+        scr.getch()
         print (ex)
     finally:
         scr.erase()
