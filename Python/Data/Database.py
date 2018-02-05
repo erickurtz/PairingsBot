@@ -1,13 +1,24 @@
-#!/usr/bin/python3
-
 import pymysql
 
-connection = pymysql.connect(host='localhost',
-                             user='PairingsBotMod',
-                             password='password',
-                             db='PairingsBot',
+connection = pymysql.connect(host='pairingsbot_db_1',
+                             user='root',
+                             password='root',
+                             db='pairingsbotdb',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
+
+def save_pairing_model(pairing_model):
+    try:
+        with connection.cursor() as cursor:
+            sql = "INSERT INTO Tournament ('Name', 'NumberOfRounds', 'RoundDuration', 'StartDate')"
+            cursor.execute(sql, 
+                    (pairing_model.tournament_name,
+                    pairing_model.number_of_rounds, 
+                    pairing_model.start_date,
+                    pairing_model.round_duration))
+    finally:
+        connection.close()
+
 
 def testDatabase():
     try:
@@ -26,7 +37,7 @@ def readDatabase():
             sql = "SELECT * FROM Player"
             cursor.execute(sql)
             for twitchName in cursor:
-                print twitchName
+                print(twitchName)
     finally:
         connection.close()
 

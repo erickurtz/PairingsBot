@@ -1,13 +1,11 @@
-import Player.py
-
 class Pairing:
     
     def __init__(self, whitePlayer, blackPlayer):
 
         self.whitePlayer = whitePlayer
         self.blackPlayer = blackPlayer
-        p1WhiteRatio = float playerOne.numWhites/playerOne.numGames
-        p2WhiteRatio = float playerTwo.numwhites/playerTwo.numGames
+        p1WhiteRatio = float(playerOne.numWhites/playerOne.numGames)
+        p2WhiteRatio = float(playerTwo.numwhites/playerTwo.numGames)
 
         if(p1WhiteRatio < p2WhiteRatio):
             makePairing(playerOne, playerTwo)

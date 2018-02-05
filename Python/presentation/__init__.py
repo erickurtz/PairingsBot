@@ -3,8 +3,9 @@
 # Will use curses for the GUI
 
 import curses
-import launch_scr
 import traceback
+
+from . import launch_scr
 
 def initialize():
     scr = curses.initscr()

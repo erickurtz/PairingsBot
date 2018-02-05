@@ -1,5 +1,7 @@
 import curses
 
+from . import create_tournament_scr
+
 def changeMenuItem(scr, menuLen, index):
     for i in range(0, menuLen):
         if i == index:
@@ -38,4 +40,7 @@ def initialize(scr):
                 line_hilighted  =  line_hilighted - 1
                 changeMenuItem(scr, len(menuItems), line_hilighted)
         elif direction == curses.KEY_ENTER or direction == 10 or direction == 13:
-            break;
+            break
+
+    if line_hilighted == 0:
+        create_tournament_scr.initialize(scr)
