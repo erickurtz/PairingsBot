@@ -24,9 +24,9 @@ def initialize(scr):
     type_of_string = type(string_time)
 
     scr.addstr(str(type))
-    start_date = datetime.strptime(str(string_time), '%d/%m/%y %H:%M')
+    start_date = datetime.strptime("21/11/06 16:30", '%d/%m/%y %H:%M')
 
     model = Tournament(tourn_name, num_rounds, start_date, length)
-    Database.save_pairing_model(model)
+    database.save_pairing_model(model)
 
     scr.getch()

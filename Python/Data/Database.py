@@ -10,12 +10,13 @@ connection = pymysql.connect(host='pairingsbot_db_1',
 def save_pairing_model(pairing_model):
     try:
         with connection.cursor() as cursor:
-            sql = "INSERT INTO Tournament ('Name', 'NumberOfRounds', 'RoundDuration', 'StartDate')"
+            sql = "INSERT INTO pairingsbotdb.Tournament (Name, NumberOfRounds, RoundLength, StartDate) VALUES (%s, %s, %s, %s)"
             cursor.execute(sql, 
                     (pairing_model.tournament_name,
                     pairing_model.number_of_rounds, 
-                    pairing_model.start_date,
-                    pairing_model.round_duration))
+                    pairing_model.round_duration,
+                    pairing_model.start_date.timestamp()))
+            connection.commit()
     finally:
         connection.close()
 
