@@ -20,11 +20,11 @@ def initialize(scr):
     scr.addstr("Length of Rounds: ")
     length = int(scr.getstr())
     scr.addstr("Start date: ")
-    string_time = scr.getstr()
-    type_of_string = type(string_time)
 
-    scr.addstr(str(type))
-    start_date = datetime.strptime("21/11/06 16:30", '%d/%m/%y %H:%M')
+    utfDateTimeString = str(scr.getscr(), 'utf-8')
+
+    #21/11/06 16:30
+    start_date = datetime.strptime(unicodeString, '%d/%m/%y %H:%M')
 
     model = Tournament(tourn_name, num_rounds, start_date, length)
     database.save_pairing_model(model)
