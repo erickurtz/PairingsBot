@@ -13,6 +13,7 @@ services:
     volumes:
      - "./.data/db:/var/lib/mysql"
      # - mysql:/var/lib/mysql
+     # TODO: Is this still correct
      - ./Python/MySQLScripts/:/docker-entrypoint-initdb.d
     ports:
       - 42333:3306
